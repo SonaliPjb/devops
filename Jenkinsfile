@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        tage('Test Docker Access') {
+        stage('Test Docker Access') {
             steps {
                 script {
                     sh 'docker info'
