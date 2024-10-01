@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t $benakepj/fe_new_img .'
+                    sh 'docker build -t benakepj/fe_new_img .'
                 }
             }
         }
