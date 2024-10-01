@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Log in to your Docker registry if needed
-                    // sh 'docker login -u <username> -p <password>'
+                    sh 'docker login -u benakepj -p Benakepj@123'
                     //sh 'docker tag $benakepj/fe_new_img <YOUR_DOCKER_REGISTRY>/$DOCKER_IMAGE'
                     sh 'docker push benakepj/fe_new_img'
                 }
