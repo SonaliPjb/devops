@@ -9,12 +9,14 @@ pipeline {
             steps {
                 git url: 'https://github.com/SonaliPjb/devops.git',
                 branch: 'main'
+                echo 'checkout done'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
                     sh 'docker build -t benakepj/fe_new_img .'
+                    echo 'image built'
                 }
             }
         }
