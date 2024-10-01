@@ -20,23 +20,23 @@ pipeline {
                 }
             }
         }
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    // Log in to your Docker registry if needed
-                    sh 'docker login -u benakepj -p Benakepj@123'
-                    //sh 'docker tag $benakepj/fe_new_img <YOUR_DOCKER_REGISTRY>/$DOCKER_IMAGE'
-                    sh 'docker push ${DOCKER_IMAGE}'
-                }
-            }
-        }
-        stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    sh 'kubectl apply -f deployment.yaml'
-                    sh 'kubectl apply -f service.yaml'
-                }
-            }
-        }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         script {
+        //             // Log in to your Docker registry if needed
+        //             sh 'docker login -u benakepj -p Benakepj@123'
+        //             //sh 'docker tag $benakepj/fe_new_img <YOUR_DOCKER_REGISTRY>/$DOCKER_IMAGE'
+        //             sh 'docker push ${DOCKER_IMAGE}'
+        //         }
+        //     }
+        // }
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         script {
+        //             sh 'kubectl apply -f deployment.yaml'
+        //             sh 'kubectl apply -f service.yaml'
+        //         }
+        //     }
+        // }
     }
 }

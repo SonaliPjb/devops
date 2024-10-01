@@ -1,4 +1,4 @@
-# Stage 1: Build the Node.js application
+# Use the official Node.js image as the base image
 FROM node:18 AS build
 
 # Set the working directory
@@ -16,19 +16,10 @@ COPY . .
 # Build the Vite application
 RUN npm run build
 
-# Stage 2: Create a lightweight Jenkins image with Docker
-FROM jenkins/jenkins:lts
+# Use a lightweight Node.js image to serve the app
+FROM node:18
 
-USER root
-
-# Install Docker
-RUN apt-get update && \
-    apt-get install -y docker.io && \
-    apt-get clean
-
-USER jenkins
-
-# Set the working directory for your application
+# Set the working directory
 WORKDIR /app
 
 # Copy the build output from the previous stage
@@ -42,3 +33,16 @@ EXPOSE 80
 
 # Start the static file server
 CMD ["serve", "-s", ".", "-l", "80"]
+
+
+
+# FROM jenkins/jenkins:lts
+
+# USER root
+
+# # Install Docker
+# RUN apt-get update && \
+#     apt-get install -y docker.io && \
+#     apt-get clean
+
+# USER jenkins
