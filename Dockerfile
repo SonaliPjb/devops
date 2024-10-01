@@ -43,6 +43,8 @@ CMD ["serve", "-s", ".", "-l", "80"]
 # # Install Docker
 # RUN apt-get update && \
 #     apt-get install -y docker.io && \
+#     usermod -aG docker jenkins && \
 #     apt-get clean
 
 # USER jenkins
+
