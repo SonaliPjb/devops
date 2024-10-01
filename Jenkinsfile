@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t ${benakepj/fe_new_img} ."
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                     echo 'build done'
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
                     // Log in to your Docker registry if needed
                     sh 'docker login -u benakepj -p Benakepj@123'
                     //sh 'docker tag $benakepj/fe_new_img <YOUR_DOCKER_REGISTRY>/$DOCKER_IMAGE'
-                    sh 'docker push benakepj/fe_new_img'
+                    sh 'docker push ${DOCKER_IMAGE}'
                 }
             }
         }
