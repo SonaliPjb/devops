@@ -12,6 +12,14 @@ pipeline {
                 echo 'checkout done'
             }
         }
+
+        tage('Test Docker Access') {
+            steps {
+                script {
+                    sh 'docker info'
+                }
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
