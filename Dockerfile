@@ -33,18 +33,3 @@ EXPOSE 80
 
 # Start the static file server
 CMD ["serve", "-s", ".", "-l", "80"]
-
-
-
-# FROM jenkins/jenkins:lts
-
-# USER root
-
-# # Install Docker
-# RUN apt-get update && \
-#     apt-get install -y docker.io && \
-#     usermod -aG docker jenkins && \
-#     apt-get clean
-
-# USER jenkins
-

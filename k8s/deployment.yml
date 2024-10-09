@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: react
-          image: benakepj/fe_new_img
+          image: benakepj/ultimate-cicd:replaceImageTag
           ports:
             - containerPort: 80
