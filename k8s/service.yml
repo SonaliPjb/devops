@@ -7,7 +7,7 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 80  #This is the port which is exposed internally 
+      targetPort: 80 # This is the port of the container inside the worker node
       nodePort: 30007 # This port can be any valid port within the NodePort range
   type: NodePort
